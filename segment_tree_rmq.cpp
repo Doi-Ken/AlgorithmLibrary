@@ -41,7 +41,7 @@ void init(int n_) {
 	while (N < n_) N *= 2;
 
 	for (int i = 0; i < 2 * N - 1; i++) {
-		dat[i] = INF;
+		dat[i] = LINF;
 	}
 }
 
@@ -62,11 +62,11 @@ void update(int k, long long a) {
 // k は節点の番号、l, rはその節点が[l, r)に対応づいていることを表す。
 // したがって、外からquery(a, b, 0, 0, n)をよぶ。
 // (k(0)番目の節点、l(0) ～ r(n)の間を初めは指定)
-int query(int a, int b, int k, int l, int r) {
+long long query(int a, int b, int k, int l, int r) {
 
 	// [a, b)と[l, r)が交差しなければ INF
 	if (r <= a || b <= l) {
-		return INF;
+		return LINF;
 	}
 
 	// [a, b) が[l, r)を完全に含んでいれば、この節点の値
@@ -74,8 +74,8 @@ int query(int a, int b, int k, int l, int r) {
 		return dat[k];
 	}
 	else {
-		int v1 = query(a, b, k * 2 + 1, l, (l + r) / 2);
-		int v2 = query(a, b, k * 2 + 2, (l + r) / 2, r);
+		long long v1 = query(a, b, k * 2 + 1, l, (l + r) / 2);
+		long long v2 = query(a, b, k * 2 + 2, (l + r) / 2, r);
 		return min(v1, v2);
 	}
 }
