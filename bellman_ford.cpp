@@ -50,8 +50,8 @@ bool bellman_ford(int s) {
 			edge e = edges[j];
 			if (dist[e.from] != LINF && dist[e.to] > dist[e.from] + e.d) {
 				dist[e.to] = dist[e.from] + e.d;
-				// あくまで終点を含む負の閉路が検出された場合 trueとなる
-				// もし終点だけでなく、どの負の閉路も認めない場合、e.to == V - 1を削除すれば良い。
+				// あくまで終点が無限に最適になり得る負の閉路が検出された場合 trueとなる
+				// もし終点に関係ないようなどの負の閉路も認めない場合、e.to == V - 1を削除すれば良い。
 				// https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_B&lang=ja　では、e.to=V-1は削除（どの負閉路も認めない）
 				if (i >= V - 1 && e.to == V - 1) return true;
 			}
