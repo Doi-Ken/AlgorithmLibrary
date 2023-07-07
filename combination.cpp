@@ -66,7 +66,7 @@ long long combination(long long l, long long r, long long mod) {
 }
 
 // https://qiita.com/mosamosa/items/79cf230ae22ee71f6801
-std::vector<std::vector<long long>> comb(long long n, long r) {
+std::vector<std::vector<long long>> comb(long long n, long long r) {
 	std::vector<std::vector<long long>> v(n + 1, std::vector<long long>(n + 1, 0));
 	for (int i = 0; i < v.size(); i++) {
 		v[i][0] = 1;
