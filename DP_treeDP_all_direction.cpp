@@ -30,6 +30,7 @@ double PI = 3.14159265358979323846;
 //using ll = long long;
 
 // https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A&lang=jp
+// https://algo-logic.info/tree-dp/
 
 struct edge {
 	int to;
