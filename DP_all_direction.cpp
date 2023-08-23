@@ -29,6 +29,7 @@ const int MAX_ARRAYK = 100000;
 double PI = 3.14159265358979323846;
 //using ll = long long;
 
+// https://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A&lang=jp
 
 struct edge {
 	int to;
