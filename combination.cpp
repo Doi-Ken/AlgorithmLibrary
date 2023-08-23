@@ -65,6 +65,17 @@ long long combination(long long l, long long r, long long mod) {
 	return ans;
 }
 
+// https://blog.hamayanhamayan.com/entry/2019/06/30/104521
+
+long long aCb(long long a, long long b, long long mod) {
+	return combination(a, b, mod);
+}
+
+long long nHk(long long n, long long k, long long mod) {
+	if (n == 0 && k == 0) return 1; if (n <= 0 || k < 0) return 0;
+	return aCb(n + k - 1, k, mod);
+}
+
 // https://qiita.com/mosamosa/items/79cf230ae22ee71f6801
 std::vector<std::vector<long long>> comb(long long n, long long r) {
 	std::vector<std::vector<long long>> v(n + 1, std::vector<long long>(n + 1, 0));
