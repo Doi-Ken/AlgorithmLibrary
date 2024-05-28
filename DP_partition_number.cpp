@@ -43,8 +43,8 @@ long long dp[1010][1010]; // ©‘R”n‚ğkŒÂ‚Ì0ˆÈã‚Ì®”‚É•ªŠ„‚·‚é•û–@F‹æ•Ê‚Å‚«‚È
 
 void solve_p() {
 	p[0][0] = 1;
-	for (int n = 1; n <= N; n++) {
-		for (int k = 1; k <= N; k++) {
+	for (int n = 1; n <= 1000; n++) {
+		for (int k = 1; k <= 1000; k++) {
 			if (n - k >= 0) {
 				p[n][k] = (p[n - 1][k - 1] + p[n - k][k]) % mod;
 			}
@@ -57,8 +57,8 @@ void solve_p() {
 
 void solve_dp() {
 	dp[0][0] = 1;
-	for (int i = 1; i <= N; i++) {
-		for (int j = 0; j <= N; j++) {
+	for (int i = 1; i <= 1000; i++) {
+		for (int j = 0; j <= 1000; j++) {
 			if (j - i >= 0) {
 				dp[j][i] = (dp[j][i - 1] + dp[j - i][i]) % mod;
 			}
